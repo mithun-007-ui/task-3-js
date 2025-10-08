@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let name = prompt("Enter your name sir/mam:");
+    if (!name) {
+      alert("Pls enter your name!"); 
+    }
+else {
+      let Order = confirm("Hello " + name + "Do you want to order food?");
+          if (!Order) {
+        alert("Goodbye! See you next time!");
+      } 
+      else {
+        //to select item
+        let menu = {
+          1: { item: "Pizza", price: 250 },
+          2: { item: "Burger", price: 200 },
+          3: { item: "Sandwich", price: 50 }
+        };
+        let choice = prompt("Menu:\n1.Pizza (₹250)\n2.Burger (₹200)\n3. Sandwich (₹50)");
+        if (!menu[choice]) {
+          alert("Invalid choice!");
+        } 
+        else {
+          let qty = parseInt(prompt("How many " + menu[choice].item + "(s) do you want?"));
+          if (isNaN(qty) || qty < 1) {
+            alert("Invalid quantity!");
+          } 
+          else {
+            let total = menu[choice].price * qty;//to cal bill
+            alert("You ordered " + qty + menu[choice].item + "(s)\n Total = " + total + "\nThankyou!"); //to shoe output
+          }
+        }
+      }
+    }
+
+
+    </script>
+</body>
+</html>
